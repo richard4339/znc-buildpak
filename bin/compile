@@ -14,7 +14,7 @@ if [ -f $2/app/znc ]; then
 else
   echo "-----> downloading and compile znc"
   cd $2; curl -O http://znc.in/releases/znc-latest.tar.gz
-  cd $2; tar zxvf znc-latest.tar.gz -C $2
+  cd $2; tar zxvf znc-latest.tar.gz -C $2 --strip-components=1
   cd $2; ./configure --prefix="/app/znc"
   cd $2; make
   cd $2; make install

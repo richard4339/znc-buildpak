@@ -18,8 +18,8 @@ else
   cd $2; ./configure --prefix="/app/znc"
   cd $2; make
   cd $2; make install
+  cd $2; rm znc-latest.tar.gz
   cp -R /app/znc/ $1/
-
 fi
 
 echo "-----> Relocating znc config to proper folder"

@@ -16,11 +16,7 @@ else
   echo "-----> downloading and compile znc"
   cd $2; curl -O http://znc.in/releases/znc-latest.tar.gz
   cd $2; tar zxvf znc-latest.tar.gz -C $2/znc-latest
-  if [ -f autogen.sh ]; then
-    cd $2/znc-latest; ./autogen.sh --prefix="/app/znc"
-  else
-    cd $2/znc-latest; ./configure --prefix="/app/znc"
-  fi
+  cd $2/znc-latest; ./configure --enable-run-from-source --prefix="/app/znc"
   cd $2/znc-latest; make
   cd $2/znc-latest; make install
   cp -R /app/znc/ $1/

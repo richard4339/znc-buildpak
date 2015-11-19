@@ -8,7 +8,7 @@ cd $DIR; cp -R ../files/ngrok $1/ngrok
 mkdir -p /app
 mkdir -p $2
 mkdir -p $2/znc-latest
-if [ -f $2/znc-latest.tar.gz ]; then
+if [ -f $2/app/znc ]; then
   echo "-----> znc is already compiled"
   cd $2/znc-latest; make install
   cp -R /app/znc/ $1/

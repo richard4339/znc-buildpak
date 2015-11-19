@@ -20,6 +20,7 @@ else
     cd $2/znc-latest; ./autogen.sh --prefix="/app/znc"
   else
     cd $2/znc-latest; ./configure --prefix="/app/znc"
+  fi
   cd $2/znc-latest; make
   cd $2/znc-latest; make install
   cp -R /app/znc/ $1/

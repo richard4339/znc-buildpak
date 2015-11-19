@@ -7,7 +7,7 @@ cd $DIR; cp -R ../files/run_znc.sh $1/run_znc.sh
 cd $DIR; cp -R ../files/ngrok $1/ngrok
 mkdir -p /app
 mkdir -p $2
-if [ -f $1/app/znc/bin/znc ]; then
+if [ -f $1/bin/znc ]; then
   echo "-----> znc is already compiled"
   cd $2; make install
   cp -R /app/znc/ $1/

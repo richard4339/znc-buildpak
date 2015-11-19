@@ -1,6 +1,6 @@
 ./znc/bin/znc -f &
 export ZNCPID=$!
-./ngrok start znc --authtoken $NGROK_API_TOKEN --log "stdout" --config ngrok.conf
+./ngrok start --all --log "stdout" --config ngrok.conf --authtoken $NGROK_API_KEY
 export NGROKPID=$!
 echo "waiting for znc ($ZNCPID) to exit......."
 while [ -e /proc/$ZNCPID ]

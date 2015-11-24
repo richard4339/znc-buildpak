@@ -6,7 +6,7 @@ echo "-----> Installing runner"
 cd $DIR; cp -R ../files/run_znc.sh $1/run_znc.sh
 mkdir -p /app
 mkdir -p $2
-if [ -d $1/bin/znc ]; then
+if [ -f $1/znc/bin/znc ]; then
   echo "-----> znc is already compiled"
   cd $2; make install
   cp -R /app/znc/ $1/
@@ -24,7 +24,9 @@ fi
 echo "-----> Relocating znc config to proper folder"
 mkdir -p $1/.znc/configs
 cp $1/znc.conf $1/.znc/configs/znc.conf
+cp $1/znc.pem $1/.znc/znc.pem
 rm $1/znc.conf
+rm $1/znc.pem
 echo "-----> Setting up Procfile"
 cd $DIR; cp ../Procfile $1/Procfile
 cd $CURDIR

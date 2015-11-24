@@ -1,5 +1,8 @@
+set -e
+
 echo "starting znc on port ($PORT)"
-sed -i s/\$PORT/${PORT}/ .znc/configs/znc.conf
+
+sed "s/HEROKUPORT/$PORT/" /app/.znc/configs/znc.conf
 ./znc/bin/znc -f &
 export ZNCPID=$!
 echo "waiting for znc ($ZNCPID) to exit......."

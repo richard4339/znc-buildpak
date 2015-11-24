@@ -1,1 +1,1 @@
-web: ./run_znc.sh
+znc: ./run_znc.sh

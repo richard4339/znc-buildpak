@@ -1,3 +1,6 @@
+sed -i s/\$PORT/${PORT}/ .znc/configs/znc.conf
+sed -i s/\$PORT/${PORT}/ .znc/configs/ngrok.conf
+echo "starting znc on port ($PORT)"
 ./znc/bin/znc -f &
 export ZNCPID=$!
 ./ngrok start --all --log "stdout" --authtoken $NGROK_API_KEY --config ngrok.conf

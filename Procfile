@@ -1,1 +1,1 @@
-web: ./run_znc.sh
+web: bin/proximo ./run_znc.sh

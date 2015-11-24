@@ -1,1 +1,1 @@
-worker: ./run_znc.sh
+web: ./run_znc.sh

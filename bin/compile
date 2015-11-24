@@ -2,9 +2,8 @@
 
 CURDIR=$PWD
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-echo "-----> Installing ngrok and runner"
+echo "-----> Installing runner"
 cd $DIR; cp -R ../files/run_znc.sh $1/run_znc.sh
-cd $DIR; cp -R ../files/ngrok $1/ngrok
 mkdir -p /app
 mkdir -p $2
 if [ -d $1/bin/znc ]; then
